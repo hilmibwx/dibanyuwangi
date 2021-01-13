@@ -23,3 +23,19 @@ Route::get('contact-us','FrontController@contact')->name('contact');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+
+    Route::get('dashboard', 'GeneralController@dashboard')->name('admin.dashboard');
+
+    // General settings
+    Route::get('general-settings', 'GeneralController@general')->name('admin.general');
+    Route::post('general-settings', 'GeneralController@generalUpdate')->name('admin.general.update');
+
+    Route::get('travel','TravelController@index')->name('admin.travel');
+    Route::get('travel/create','TravelController@create')->name('admin.travel.create');
+    Route::post('travel','TravelController@store')->name('admin.travel.store');
+    Route::get('travel/edit/{id}','TravelController@edit')->name('admin.travel.edit');
+    Route::post('travel/update/{id}','TravelController@update')->name('admin.travel.update');
+    Route::delete('travel/{id}','TravelController@destroy')->name('admin.travel.destroy');
+});

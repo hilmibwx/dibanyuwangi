@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\{General, Travel};
 
 class FrontController extends Controller
 {
     public function home()
     {
-        return view ('welcome');
+        $general = General::find(1);
+        $travel = Travel::orderBy('id','desc')->limit(3)->get();
+        return view ('welcome', compact('general','travel'));
     }
 
     public function wisata()
@@ -38,6 +41,7 @@ class FrontController extends Controller
 
     public function contact()
     {
-        return view ('front.contact');
+        $general = General::find(1);
+        return view ('front.contact', compact('general'));
     }
 }

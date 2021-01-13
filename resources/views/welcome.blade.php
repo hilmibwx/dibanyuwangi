@@ -8,27 +8,18 @@
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Moderna</span></h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+          <h2 class="animate__animated animate__fadeInDown">Selamat Datang <span>#DiBanyuwangi</span></h2>
+          <p class="animate__animated animate__fadeInUp">Pengen liburan tapi ngga tau mau kemana ? ya #diBanyuwangi aja. Temukan destinasi menarik mulai dari wisata alam, religi, sejarah dan budaya #diBanyuwangi.</p>
+          <a href="{{ route('wisata') }}" class="btn-get-started animate__animated animate__fadeInUp">Info Wisata</a>
         </div>
       </div>
 
       <!-- Slide 2 -->
       <div class="carousel-item">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+          <h2 class="animate__animated animate__fadeInDown">Akomodasi</h2>
+          <p class="animate__animated animate__fadeInUp">Bingung mau nginap dimana ? tenang aja, #dibanyuwangi ada banyak sekali opsi penginapan mulai dari hotel berbintang, home stay dan lainnya. Di setiap kawasan wisata #dibanyuwangi pasti ada penginapan yang dapat kamu pesan.</p>
+          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Info Penginapan</a>
         </div>
       </div>
 
@@ -54,33 +45,33 @@
           <div class="row">
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
               <div class="icon-box icon-box-pink">
-                <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                <div class="icon"><i class="bx bx-car"></i></div>
+                <h4 class="title"><a href="">Destinasi Wisata</a></h4>
+                <p class="description">Informasi seputar destinasi wisata keren yang ada #diBanyuwangi</p>
               </div>
             </div>
   
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
               <div class="icon-box icon-box-cyan">
-                <div class="icon"><i class="bx bx-file"></i></div>
-                <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                <div class="icon"><i class="bx bx-hotel"></i></div>
+                <h4 class="title"><a href="">Akomodasi</a></h4>
+                <p class="description">Informasi penginapan untuk kebutuhan liburan #dibanyuwangi</p>
               </div>
             </div>
   
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
               <div class="icon-box icon-box-green">
-                <div class="icon"><i class="bx bx-tachometer"></i></div>
-                <h4 class="title"><a href="">Magni Dolores</a></h4>
-                <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                <div class="icon"><i class="bx bx-restaurant"></i></div>
+                <h4 class="title"><a href="">Restaurant</a></h4>
+                <p class="description">Cafe & Resto kece untuk kebutuhan konsumsi #dibanyuwangi</p>
               </div>
             </div>
   
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
               <div class="icon-box icon-box-blue">
-                <div class="icon"><i class="bx bx-world"></i></div>
-                <h4 class="title"><a href="">Nemo Enim</a></h4>
-                <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                <div class="icon"><i class="bx bx-paper-plane"></i></div>
+                <h4 class="title"><a href="">Artikel</a></h4>
+                <p class="description">Baca artikel seputar apa saja yang ada #dibanyuwangi</p>
               </div>
             </div>
   
@@ -99,32 +90,17 @@
     
             <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
     
+              @foreach ($travel as $travel)
               <div class="col-lg-4 col-md-6">
                 <div class="portfolio-item">
-                  <img src="{{ asset('front/img/portfolio/portfolio-1.jpg') }}" class="img-fluid" alt="">
+                  <img src="{{ asset('storage/'.$travel->cover) }}" class="img-fluid" alt="">
                   <div class="portfolio-info">
-                    <h3><a href="portfolio-details.html" data-gall="portfolioGallery" class="venobox" title="App 1">App 1</a></h3>
+                    <h3><a href="portfolio-details.html" data-gall="portfolioGallery" class="venobox" title="{{ $travel->title }}">{{ $travel->title }}</a></h3>
                   </div>
                 </div>
               </div>
+              @endforeach
     
-              <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item">
-                  <img src="{{ asset('front/img/portfolio/portfolio-2.jpg') }}" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h3><a href="portfolio-details.html" data-gall="portfolioGallery" class="venobox" title="Web 3">Web 3</a></h3>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item">
-                  <img src="{{ asset('front/img/portfolio/portfolio-3.jpg') }}" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h3><a href="portfolio-details.html" data-gall="portfolioGallery" class="venobox" title="App 2">App 2</a></h3>
-                  </div>
-                </div>
-              </div>
     
             </div>
   
