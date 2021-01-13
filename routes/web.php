@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'FrontController@home')->name('homepage');
+Route::get('wisata','FrontController@wisata')->name('wisata');
+Route::get('akomodasi','FrontController@akomodasi')->name('akomodasi');
+Route::get('cafe-resto','FrontController@caferesto')->name('caferesto');
+Route::get('artikel','FrontController@artikel')->name('artikel');
+Route::get('artikel/detail','FrontController@artikelshow')->name('artikelshow');
+Route::get('contact-us','FrontController@contact')->name('contact');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
