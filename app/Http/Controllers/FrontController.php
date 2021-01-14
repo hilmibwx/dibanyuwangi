@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{General, Hotel, Restaurant, Travel};
+use App\{Category, General, Hotel, Post, Restaurant, Tag, Travel};
 
 class FrontController extends Controller
 {
@@ -59,14 +59,63 @@ class FrontController extends Controller
         return view ('front.caferestoshow', compact('general','resto'));
     }
 
-    public function artikel()
+    public function search()
     {
-        return view ('front.artikel');
+        $query = request("query");
+
+        $posts = Post::where("title","like","%$query%")->latest()->paginate(9);
+        $general = General::find(1);
+        return view('front.artikel',compact("general","posts","query"));
     }
 
-    public function artikelshow()
+    public function artikel()
     {
-        return view ('front.artikelshow');
+        $posts = Post::where('status','=','PUBLISH')->orderBy('id','desc')->paginate(6);
+        $general = General::find(1);
+        return view ('front.artikel', compact('general','posts'));
+    }
+
+    public function artikelshow($slug)
+    {
+        $post = Post::where('slug', $slug)->firstOrFail();
+        
+        $old = $post->views;
+
+        $new = $old + 1;
+    
+        $post->views = $new;
+    
+        $post->update();
+
+        $general = General::find(1);
+        $categories = Category::get();
+        $tags = Tag::get();
+        $recent = Post::orderBy('id','desc')->limit(5)->get();
+        // $link = Link::orderBy('id','asc')->get();
+        // $lpost = Post::orderBy('id','desc')->limit(5)->get();
+        // $general = General::find(1);
+
+        return view('front.artikelshow',compact('post','general','categories','recent','tags'));
+    }
+
+    public function category(Category $category)
+    {
+        $general = General::find(1);
+        $posts = $category->posts()->latest()->paginate(9);
+        // $link = Link::orderBy('id','asc')->get();
+        // $lpost = Post::orderBy('id','desc')->limit(5)->get();
+        // $general = General::find(1);
+        return view ('front.artikel',compact('general','posts','category'));
+    }
+
+    public function tag(Tag $tag)
+    {
+        $general = General::find(1);
+        $posts = $tag->posts()->latest()->paginate(12);
+        // $link = Link::orderBy('id','asc')->get();
+        // $lpost = Post::orderBy('id','desc')->limit(5)->get();
+        // $general = General::find(1);
+        return view ('front.artikel',compact('general','posts','tag'));
     }
 
     public function contact()

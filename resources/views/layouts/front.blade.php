@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>{{ $general->title }}</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>@yield('title') {{ $general->title }}</title>
+  
+  @yield('meta')
 
   <!-- Favicons -->
   <link href="{{ asset('front/img/favicon.png')}}" rel="icon">
@@ -161,6 +161,8 @@
 
   <!-- Template Main JS File -->
   <script src="{{ asset('front/js/main.js') }}"></script>
+
+  @stack('scripts')
 
 </body>
 

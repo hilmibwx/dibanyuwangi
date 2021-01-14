@@ -1,5 +1,9 @@
 @extends('layouts.front')
 
+@section('meta')
+<meta name="description" content="{{ $general->meta_desc }}">
+<meta name='keywords' content='{{ $general->keyword }}' />
+@endsection
 @section('hero')
 
 <section id="hero" class="d-flex justify-cntent-center align-items-center">

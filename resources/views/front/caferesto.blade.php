@@ -30,7 +30,7 @@
          
     <div class="section-title">
     
-      <h2>Destinasi Wisata</h2>
+      <h2>Cafe & Resto</h2>
     
     </div>
           

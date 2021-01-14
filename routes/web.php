@@ -21,7 +21,10 @@ Route::get('akomodasi/{slug}','FrontController@akomodasishow')->name('akomodasis
 Route::get('cafe-resto','FrontController@caferesto')->name('caferesto');
 Route::get('cafe-resto/{slug}','FrontController@caferestoshow')->name('caferestoshow');
 Route::get('artikel','FrontController@artikel')->name('artikel');
-Route::get('artikel/detail','FrontController@artikelshow')->name('artikelshow');
+Route::get('artikel/search','FrontController@search')->name('search');
+Route::get('artikel/{slug}','FrontController@artikelshow')->name('artikelshow');
+Route::get('categories/{category:slug}','FrontController@category')->name('category');
+Route::get('tags/{tag:slug}','FrontController@tag')->name('tag');
 Route::get('contact-us','FrontController@contact')->name('contact');
 Auth::routes();
 
@@ -58,4 +61,41 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('resto/edit/{id}','RestaurantController@edit')->name('admin.resto.edit');
     Route::post('resto/update/{id}','RestaurantController@update')->name('admin.resto.update');
     Route::delete('resto/{id}','RestaurantController@destroy')->name('admin.resto.destroy');
+
+     // Manage Categories
+     Route::get('categories', 'CategoryController@index')->name('admin.category');
+     Route::get('categories/create', 'CategoryController@create')->name('admin.category.create');
+     Route::post('categories/create', 'CategoryController@store')->name('admin.category.store');
+     Route::get('categories/edit/{id}', 'CategoryController@edit')->name('admin.category.edit');
+     Route::post('categories/edit/{id}', 'CategoryController@update')->name('admin.category.update');
+     Route::delete('categories/destroy/{id}','CategoryController@destroy')->name('admin.category.destroy');
+
+     // Manage Tags
+     Route::get('tags', 'TagController@index')->name('admin.tag');
+     Route::get('tags/create', 'TagController@create')->name('admin.tag.create');
+     Route::post('tags/create', 'TagController@store')->name('admin.tag.store');
+     Route::get('tags/edit/{id}', 'TagController@edit')->name('admin.tag.edit');
+     Route::post('tags/edit/{id}', 'TagController@update')->name('admin.tag.update');
+     Route::delete('tags/destroy/{id}','TagController@destroy')->name('admin.tag.destroy');
+
+      // Manage Blog
+    Route::get('post','PostController@index')->name('admin.post');
+
+    Route::get('post/create','PostController@create')->name('admin.post.create');
+
+    Route::post('post/create','PostController@store')->name('admin.post.store');
+
+    Route::post('/images', 'PostController@uploadImage')->name('admin.post.image');
+
+    Route::get('post/edit/{id}','PostController@edit')->name('admin.post.edit');
+
+    Route::post('post/edit/{id}','PostController@update')->name('admin.post.update');
+
+    Route::get('post/trash','PostController@trash')->name('admin.post.trash');
+
+    Route::post('post/{id}/restore','PostController@restore')->name('admin.post.restore');
+
+    Route::delete('post/trash/{id}','PostController@destroy')->name('admin.post.destroy');
+
+    Route::delete('post/destroy/{id}','PostController@deletePermanent')->name('admin.post.deletePermanent');
 });
