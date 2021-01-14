@@ -120,6 +120,12 @@
           <span>Services</span></a>
       </li> --}}
 
+      <li class="nav-item {{ request()->is('admin/hotel') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admin.hotel') }}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Penginapan</span></a>
+      </li> 
+
       <li class="nav-item {{ request()->is('admin/travel') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('admin.travel') }}">
           <i class="fas fa-fw fa-table"></i>
