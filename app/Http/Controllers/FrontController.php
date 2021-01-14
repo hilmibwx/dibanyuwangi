@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{General, Hotel, Travel};
+use App\{General, Hotel, Restaurant, Travel};
 
 class FrontController extends Controller
 {
@@ -11,8 +11,9 @@ class FrontController extends Controller
     {
         $general = General::find(1);
         $hotel = Hotel::orderBy('id','desc')->limit(3)->get();
+        $resto = Restaurant::orderBy('id','desc')->limit(3)->get();
         $travel = Travel::orderBy('id','desc')->limit(3)->get();
-        return view ('welcome', compact('general','hotel','travel'));
+        return view ('welcome', compact('general','hotel','resto','travel'));
     }
 
     public function wisata()
@@ -45,7 +46,17 @@ class FrontController extends Controller
 
     public function caferesto()
     {
-        return view ('front.caferesto');
+        $general = General::find(1);
+        $restos = Restaurant::orderBy('id','desc')->paginate(9);
+        return view ('front.caferesto', compact('general','restos'));
+    }
+
+    public function caferestoshow($slug)
+    {
+        $general = General::find(1);
+        $resto = Restaurant::where('slug', $slug)->firstOrFail();
+
+        return view ('front.caferestoshow', compact('general','resto'));
     }
 
     public function artikel()

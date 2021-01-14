@@ -19,6 +19,7 @@ Route::get('wisata/{slug}','FrontController@wisatashow')->name('wisatashow');
 Route::get('akomodasi','FrontController@akomodasi')->name('akomodasi');
 Route::get('akomodasi/{slug}','FrontController@akomodasishow')->name('akomodasishow');
 Route::get('cafe-resto','FrontController@caferesto')->name('caferesto');
+Route::get('cafe-resto/{slug}','FrontController@caferestoshow')->name('caferestoshow');
 Route::get('artikel','FrontController@artikel')->name('artikel');
 Route::get('artikel/detail','FrontController@artikelshow')->name('artikelshow');
 Route::get('contact-us','FrontController@contact')->name('contact');
@@ -49,4 +50,12 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('hotel/edit/{id}','HotelController@edit')->name('admin.hotel.edit');
     Route::post('hotel/update/{id}','HotelController@update')->name('admin.hotel.update');
     Route::delete('hotel/{id}','HotelController@destroy')->name('admin.hotel.destroy');
+
+    // Manage Resto
+    Route::get('resto','RestaurantController@index')->name('admin.resto');
+    Route::get('resto/create','RestaurantController@create')->name('admin.resto.create');
+    Route::post('resto','RestaurantController@store')->name('admin.resto.store');
+    Route::get('resto/edit/{id}','RestaurantController@edit')->name('admin.resto.edit');
+    Route::post('resto/update/{id}','RestaurantController@update')->name('admin.resto.update');
+    Route::delete('resto/{id}','RestaurantController@destroy')->name('admin.resto.destroy');
 });

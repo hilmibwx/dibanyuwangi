@@ -126,6 +126,12 @@
           <span>Penginapan</span></a>
       </li> 
 
+      <li class="nav-item {{ request()->is('admin/resto') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admin.resto') }}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Resto</span></a>
+      </li> 
+
       <li class="nav-item {{ request()->is('admin/travel') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('admin.travel') }}">
           <i class="fas fa-fw fa-table"></i>
