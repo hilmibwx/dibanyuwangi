@@ -134,7 +134,31 @@
 
 </section>
 
-<section class="portfolio py-0">
+<section id="services" class="blog pt-0 pb-3 ml-2 mr-2">
+    
+  <div class="container">
+  
+      <div class="section-title">
+ 
+          <h2>Jadwal Sholat</h2>
+       
+        </div> 
+
+      <div class="row">
+  
+          <div class="entry mx-auto d-block mb-0">
+              <marquee>
+                  Jadwal sholat hari ini atau tanggal {{ date("d F Y") }} untuk wilayah Kab. Banyuwangi, <strong>Subuh: {{ $schedule['subuh'] }} WIB</strong> | <strong>Dzuhur: {{ $schedule['dzuhur'] }} WIB</strong> | <strong>Ashar: {{ $schedule['ashar'] }} WIB</strong> | <strong>Magrib: {{ $schedule['maghrib'] }} WIB</strong> | <strong>Isya: {{ $schedule['isya'] }} WIB</strong>
+              </marquee>
+          </div>
+  
+      </div>
+  
+  </div>
+
+</section>
+
+<section class="portfolio pt-3 pb-1">
 
   <div class="container">    
    
@@ -178,7 +202,7 @@
   
 </section>
 
-<section class="portfolio">
+<section class="portfolio pt-0 pb-1">
 
   <div class="container">  
           
@@ -222,7 +246,7 @@
   
 </section>
 
-<section class="portfolio py-0">
+<section class="portfolio pt-0 pb-1">
 
   <div class="container">  
           

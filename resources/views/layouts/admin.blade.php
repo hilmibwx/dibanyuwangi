@@ -67,54 +67,28 @@
             <a class="collapse-item" href="{{ route('admin.post') }}">Blog</a>
             <a class="collapse-item" href="{{ route('admin.category') }}">Categories</a>
             <a class="collapse-item" href="{{ route('admin.tag') }}">Tags</a>
-            {{-- <a class="collapse-item" href="{{ route('admin.post.trash') }}">Trash</a> --}}
+            <a class="collapse-item" href="{{ route('admin.post.trash') }}">Trash</a>
           </div>
         </div>
       </li>
 
-      <!-- Nav Item - Pages Collapse Menu -->
-     {{-- <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Portfolio</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{ route('admin.portfolio') }}">Portfolio</a>
-            <a class="collapse-item" href="{{ route('admin.pcategory') }}">Portfolio Categories</a>
-          </div>
-        </div>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.faq') }}">
-          <i class="fas fa-fw fa-table"></i>
-          <span>FAQ</span></a>
-      </li>
-
-      <li class="nav-item">
+      <li class="nav-item {{ request()->is('admin/link') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('admin.link') }}">
           <i class="fas fa-fw fa-table"></i>
-          <span>Links</span></a>
-      </li>
+          <span>Link</span></a>
+      </li> 
 
-      <li class="nav-item">
+      <li class="nav-item {{ request()->is('admin/message') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admin.message') }}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Message</span></a>
+      </li> 
+
+      <li class="nav-item {{ request()->is('admin/page') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('admin.page') }}">
           <i class="fas fa-fw fa-table"></i>
-          <span>Pages</span></a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.partner') }}">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Partners</span></a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.service') }}">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Services</span></a>
-      </li> --}}
+          <span>Page</span></a>
+      </li> 
 
       <li class="nav-item {{ request()->is('admin/hotel') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('admin.hotel') }}">

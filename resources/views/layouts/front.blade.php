@@ -14,7 +14,8 @@
   <link href="{{ asset('front/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="{{ asset('front/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -61,6 +62,8 @@
         </ul>
       </nav><!-- .nav-menu -->
 
+      
+
     </div>
   </header><!-- End Header -->
 
@@ -93,11 +96,10 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              @foreach ($link as $link)
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ $link->link }}">{{ $link->name }}</a></li>
+              @endforeach
+              
             </ul>
           </div>
 
@@ -147,6 +149,10 @@
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
+  <div class="mode" id="theme">
+    <span class="icon" onclick="setDarkMode()" id="darkBtn">🌚</span>
+   </div>
+
   <!-- Vendor JS Files -->
   <script src="{{ asset('front/vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('front/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -161,6 +167,45 @@
 
   <!-- Template Main JS File -->
   <script src="{{ asset('front/js/main.js') }}"></script>
+
+  <script>
+    $(document).ready(function(){
+        $("img").addClass("img-responsive");
+        $("img").css("max-width", "100%");
+    });
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        $("iframe").addClass("img-responsive");
+        $("iframe").css("max-width", "100%");
+    });
+    </script>
+    
+    <script>
+  if (localStorage.getItem('theme') == 'dark')
+      setDarkMode()
+
+      // 🌝🌚
+      
+
+  function setDarkMode() {
+    let emoticon = ''
+    let isDark = document.body.classList.toggle('darkmode')
+    if (isDark) {
+      emoticon = '🌝'
+      localStorage.setItem('theme','dark')
+      
+    } else {
+      emoticon = '🌚'
+      localStorage.removeItem('theme')
+    }
+    document.getElementById('darkBtn').innerHTML = emoticon
+  }
+  
+
+ </script>
+
 
   @stack('scripts')
 

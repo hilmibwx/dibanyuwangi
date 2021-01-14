@@ -26,6 +26,9 @@ Route::get('artikel/{slug}','FrontController@artikelshow')->name('artikelshow');
 Route::get('categories/{category:slug}','FrontController@category')->name('category');
 Route::get('tags/{tag:slug}','FrontController@tag')->name('tag');
 Route::get('contact-us','FrontController@contact')->name('contact');
+Route::post('contact-us','FrontController@message')->name('message');
+Route::get('page/{slug}','FrontController@page')->name('page');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -98,4 +101,34 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::delete('post/trash/{id}','PostController@destroy')->name('admin.post.destroy');
 
     Route::delete('post/destroy/{id}','PostController@deletePermanent')->name('admin.post.deletePermanent');
+
+    // Manage Message
+    Route::get('message','MessageController@index')->name('admin.message');
+
+     //  Manage Page
+
+     Route::get('page','PageController@index')->name('admin.page');
+
+     Route::get('page/create','PageController@create')->name('admin.page.create');   
+    
+     Route::post('page/create','PageController@store')->name('admin.page.store');
+ 
+     Route::get('page/edit/{id}','PageController@edit')->name('admin.page.edit');   
+      
+     Route::post('page/edit/{id}','PageController@update')->name('admin.page.update');
+ 
+     Route::delete('page/destroy/{id}','PageController@destroy')->name('admin.page.destroy');
+
+      // Manage Link
+    Route::get('link','LinkController@index')->name('admin.link');
+
+    Route::get('link/create','LinkController@create')->name('admin.link.create');
+
+    Route::post('link/create','LinkController@store')->name('admin.link.store');
+
+    Route::get('link/edit/{id}','LinkController@edit')->name('admin.link.edit');
+
+    Route::post('link/edit/{id}','LinkController@update')->name('admin.link.update');
+
+    Route::delete('link/destroy/{id}','LinkController@destroy')->name('admin.link.destroy');
 });
