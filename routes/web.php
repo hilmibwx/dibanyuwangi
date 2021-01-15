@@ -30,7 +30,7 @@ Route::post('contact-us','FrontController@message')->name('message');
 Route::get('page/{slug}','FrontController@page')->name('page');
 Route::get('covid-19','FrontController@covid')->name('covid');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
