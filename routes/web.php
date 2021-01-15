@@ -28,6 +28,7 @@ Route::get('tags/{tag:slug}','FrontController@tag')->name('tag');
 Route::get('contact-us','FrontController@contact')->name('contact');
 Route::post('contact-us','FrontController@message')->name('message');
 Route::get('page/{slug}','FrontController@page')->name('page');
+Route::get('covid-19','FrontController@covid')->name('covid');
 
 Auth::routes();
 
@@ -131,4 +132,13 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('link/edit/{id}','LinkController@update')->name('admin.link.update');
 
     Route::delete('link/destroy/{id}','LinkController@destroy')->name('admin.link.destroy');
+
+     // Manage Admin
+     Route::get('users', 'UserController@index')->name('admin.user');
+     Route::post('users/{id}', 'UserController@changepassword')->name('admin.user.changepassword');
+     Route::get('users/create', 'UserController@create')->name('admin.user.create');
+     Route::post('users/create', 'UserController@store')->name('admin.user.store');
+     Route::get('users/edit/{id}', 'UserController@edit')->name('admin.user.edit');
+     Route::post('users/edit/{id}', 'UserController@update')->name('admin.user.update');
+     Route::delete('users/destroy/{id}','UserController@destroy')->name('admin.user.destroy');
 });

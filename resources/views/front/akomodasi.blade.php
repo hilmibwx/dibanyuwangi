@@ -54,11 +54,11 @@
 
       </div>
 
-      @endforeach
-
-      {{ $hotels->links() }}  
+      @endforeach 
  
     </div> 
+
+    {{ $hotels->links() }} 
         
   </div>
   

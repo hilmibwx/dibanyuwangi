@@ -10,13 +10,12 @@
   @yield('meta')
 
   <!-- Favicons -->
-  <link href="{{ asset('front/img/favicon.png')}}" rel="icon">
-  <link href="{{ asset('front/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <link href="{{ asset('storage/'.$general->favicon)}}" rel="icon">
+  <link href="{{ asset('storage/'.$general->favicon)}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
-
   <!-- Vendor CSS Files -->
   <link href="{{ asset('front/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <link href="{{ asset('front/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
@@ -29,6 +28,13 @@
   <!-- Template Main CSS File -->
   <link href="{{ asset('front/css/style.css')}}" rel="stylesheet">
 
+  @isset($general->sharethis)
+      {!! $general->sharethis !!}
+  @endisset
+
+  @isset($general->gverification)
+      {!! $general->gverification !!}
+  @endisset
   <!-- =======================================================
   * Template Name: Moderna - v2.2.0
   * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
@@ -53,19 +59,16 @@
 
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{{ route('homepage') }}">Home</a></li>
-          <li><a href="{{ route('wisata') }}">Wisata</a></li>
-          <li><a href="{{ route('akomodasi') }}">Akomodasi</a></li>
-          <li><a href="{{ route('caferesto') }}">Cafe & Resto</a></li>
-          <li><a href="{{ route('artikel') }}">Artikel</a></li>
-          <li><a href="{{ route('contact') }}">Contact Us</a></li>
+          <li {{ request()->is('/') ? 'class=active' : '' }}><a href="{{ route('homepage') }}">Home</a></li>
+          <li {{ request()->is('wisata') ? 'class=active' : '' }}><a href="{{ route('wisata') }}">Wisata</a></li>
+          <li {{ request()->is('akomodasi') ? 'class=active' : '' }}><a href="{{ route('akomodasi') }}">Akomodasi</a></li>
+          <li {{ request()->is('cafe-resto') ? 'class=active' : '' }}><a href="{{ route('caferesto') }}">Cafe & Resto</a></li>
+          <li {{ request()->is('artikel') ? 'class=active' : '' }}><a href="{{ route('artikel') }}">Artikel</a></li>
         </ul>
-      </nav><!-- .nav-menu -->
-
-      
+      </nav>
 
     </div>
-  </header><!-- End Header -->
+  </header>
 
   @yield('hero')
 
@@ -73,7 +76,7 @@
 
     @yield('content')
 
-  </main><!-- End #main -->
+  </main>
 
   <!-- ======= Footer ======= -->
   <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
@@ -88,8 +91,6 @@
               <li><i class="bx bx-chevron-right"></i> <a href="https://www.alibabacloud.com/" target="_blank">Alibabacloud.com</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="https://bootstrapmade.com" target="_blank">Bootstrapmade.com</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="https://codepolitan.com" target="_blank">Codepolitan.com</a></li>
-              {{-- <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li> --}}
             </ul>
           </div>
 

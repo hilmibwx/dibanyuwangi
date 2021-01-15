@@ -56,9 +56,9 @@
 
       @endforeach
 
-      {{ $travels->links() }}
-
     </div>  
+
+    {{ $travels->links() }}
         
   </div>
   

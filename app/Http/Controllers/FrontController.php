@@ -81,7 +81,7 @@ class FrontController extends Controller
 
     public function artikel()
     {
-        $posts = Post::where('status','=','PUBLISH')->orderBy('id','desc')->paginate(6);
+        $posts = Post::where('status','=','PUBLISH')->orderBy('id','desc')->paginate(9);
         $general = General::find(1);
         $link = Link::orderBy('name','asc')->get();
         return view ('front.artikel', compact('general','link','posts'));
@@ -173,6 +173,18 @@ class FrontController extends Controller
         $link = Link::orderBy('name','asc')->get();
         $schedule = Http::get('https://api.banghasan.com/sholat/format/json/jadwal/kota/742/tanggal/'.date("Y-m-d"))->json()['jadwal']['data'];
         return view('front.page',compact('page','general','link','schedule'));
+    }
+
+    public function covid()
+    {
+        $general = General::find(1);
+        $idcovid = Http::get('https://api.kawalcorona.com/indonesia');
+        $iddata = $idcovid->json();
+        $response = Http::get('https://api.kawalcorona.com/indonesia/provinsi');
+        $data = $response->json();
+        $link = Link::orderBy('name','asc')->get();
+
+        return view('front.covid',compact('data','iddata','general','link'));
     }
 
 }

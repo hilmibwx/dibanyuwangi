@@ -56,9 +56,9 @@
       
       @endforeach
 
-      {{ $restos->links() }}
-
     </div>  
+
+    {{ $restos->links() }}
         
   </div>
   

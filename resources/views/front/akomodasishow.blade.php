@@ -1,5 +1,30 @@
 @extends('layouts.front')
 
+@section('title')
+{{ $hotel->title }} - 
+@endsection
+@section('meta')
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="{{ $hotel->title }}">
+<meta name="description" content="{{ $hotel->meta_desc }}">
+<meta name='keywords' content='{{ $hotel->keyword }}' />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="www.dibanyuwangi.cyou/akomodasi/{{ $hotel->slug }}">
+<meta property="og:title" content="{{ $hotel->title }}">
+<meta property="og:description" content="{{ $hotel->meta_desc }}">
+<meta property="og:image" content="{{ asset('storage/'.$hotel->cover) }}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary">
+<meta property="twitter:url" content="www.dibanyuwangi.cyou/akomodasi/{{ $hotel->slug }}">
+<meta property="twitter:title" content="{{ $hotel->title }}">
+<meta property="twitter:description" content="{{ $hotel->meta_desc }}">
+<meta property="twitter:image" content="{{ asset('storage/'.$hotel->cover) }}">
+@endsection
+
 @section('content')
 
 <section class="breadcrumbs">

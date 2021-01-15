@@ -36,10 +36,19 @@
 
         <p class="animate__animated animate__fadeInUp">Bingung mau nginap dimana ? tenang aja, #dibanyuwangi ada banyak sekali opsi penginapan mulai dari hotel berbintang, home stay dan lainnya. Di setiap kawasan wisata #dibanyuwangi pasti ada penginapan yang dapat kamu pesan.</p>
 
-        <a href="" class="btn-get-started animate__animated animate__fadeInUp">Info Penginapan</a>
+        <a href="{{ route('akomodasi') }}" class="btn-get-started animate__animated animate__fadeInUp">Info Penginapan</a>
 
       </div>
 
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <div class="carousel-container">
+        <h2 class="animate__animated animate__fadeInDown">Stay Safe Stay Healthy</h2>
+        <p class="animate__animated animate__fadeInUp">Ayo jaga jarak, gunakan maskermu & rajin mencuci tangan untuk menghindari virus covid 19. Disiplin melindungi diri sendiri merupakan wujud partisipasi kita menuju Indonesia bebas covid 19. #staysafe #stayhealthy</p>
+        <a href="{{ url('covid-19') }}" class="btn-get-started animate__animated animate__fadeInUp">Informasi Covid-19</a>
+      </div>
     </div>
 
     <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
@@ -138,7 +147,7 @@
     
   <div class="container">
   
-      <div class="section-title">
+      <div class="section-title" data-aos="fade-up">
  
           <h2>Jadwal Sholat</h2>
        
@@ -146,7 +155,7 @@
 
       <div class="row">
   
-          <div class="entry mx-auto d-block mb-0">
+          <div class="entry mx-auto d-block mb-0" data-aos="fade-up">
               <marquee>
                   Jadwal sholat hari ini atau tanggal {{ date("d F Y") }} untuk wilayah Kab. Banyuwangi, <strong>Subuh: {{ $schedule['subuh'] }} WIB</strong> | <strong>Dzuhur: {{ $schedule['dzuhur'] }} WIB</strong> | <strong>Ashar: {{ $schedule['ashar'] }} WIB</strong> | <strong>Magrib: {{ $schedule['maghrib'] }} WIB</strong> | <strong>Isya: {{ $schedule['isya'] }} WIB</strong>
               </marquee>
@@ -162,7 +171,7 @@
 
   <div class="container">    
    
-    <div class="section-title">
+    <div class="section-title" data-aos="fade-up">
    
       <h2>Destinasi Wisata</h2>
    
@@ -206,7 +215,7 @@
 
   <div class="container">  
           
-    <div class="section-title">
+    <div class="section-title" data-aos="fade-up">
     
       <h2>Akomodasi</h2>
     
@@ -250,7 +259,7 @@
 
   <div class="container">  
           
-    <div class="section-title">
+    <div class="section-title" data-aos="fade-up">
     
       <h2>Cafe & Resto</h2>
     

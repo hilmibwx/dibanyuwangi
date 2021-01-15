@@ -41,7 +41,7 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.dashboard') }}">
-        <div class="sidebar-brand-text mx-3">Our Company<sup>1.0</sup></div>
+        <div class="sidebar-brand-text mx-3">#diBanyuwangi<sup>1.0</sup></div>
       </a>
 
       <!-- Divider -->
@@ -100,6 +100,12 @@
         <a class="nav-link" href="{{ route('admin.resto') }}">
           <i class="fas fa-fw fa-table"></i>
           <span>Resto</span></a>
+      </li> 
+
+      <li class="nav-item {{ request()->is('admin/user') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admin.user') }}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>User</span></a>
       </li> 
 
       <li class="nav-item {{ request()->is('admin/travel') ? 'active' : '' }}">
