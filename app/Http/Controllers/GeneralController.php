@@ -1,14 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\{General};
+use App\{General, Hotel, Post, Restaurant, Travel};
 use Illuminate\Http\Request;
 
 class GeneralController extends Controller
 {
     public function dashboard()
     {    
-        return view ('admin.dashboard');
+        $wisata = Travel::count();
+        $hotel = Hotel::count();
+        $resto = Restaurant::count();
+        $post = Post::where('status','PUBLISH')->count();
+        return view ('admin.dashboard', compact('wisata','hotel','resto','post'));
     }
 
     public function general(){

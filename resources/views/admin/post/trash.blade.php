@@ -10,7 +10,7 @@
 
 <!-- Page Heading -->
 
-<h1 class="h3 mb-2 text-gray-800">Posts</h1>     
+<h1 class="h3 mb-2 text-gray-800">Trash</h1>     
    
 @if (session('success'))
 
@@ -28,7 +28,7 @@
 
     <div class="card-header py-3">
 
-        <a href="{{ route('admin.post.create') }}" class="btn btn-success">Create Post</a>
+        <a href="{{ route('admin.post.create') }}" class="btn btn-success">Tambah Data</a>
 
     </div>
 

@@ -102,7 +102,7 @@
           <span>Resto</span></a>
       </li> 
 
-      <li class="nav-item {{ request()->is('admin/user') ? 'active' : '' }}">
+      <li class="nav-item {{ request()->is('admin/users') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('admin.user') }}">
           <i class="fas fa-fw fa-table"></i>
           <span>User</span></a>

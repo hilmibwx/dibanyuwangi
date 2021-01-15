@@ -174,7 +174,11 @@ Artikel -
       </div>
       
       @endforeach
-          
+      
+      @if($posts->count() == 0)
+      <img src="{{ asset('storage/notfound.png') }}" class="img-fluid">
+      @endif
+      
     </div>
     
       {{ $posts->links() }}

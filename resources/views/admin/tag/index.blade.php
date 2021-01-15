@@ -28,7 +28,7 @@
 
     <div class="card-header py-3">
 
-        <a href="{{ route('admin.tag.create') }}" class="btn btn-success">Create tag</a>
+        <a href="{{ route('admin.tag.create') }}" class="btn btn-success">Tambah Data</a>
 
     </div>
 
