@@ -72,9 +72,15 @@
                 </p>
 
             </div>
+            
+              <div id="disqus_thread"></div>
 
         </div>
 
     </section>
 
     @endsection
+    
+    @push('scripts')
+{!! $general->disqus !!}
+@endpush
