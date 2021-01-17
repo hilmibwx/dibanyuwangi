@@ -62,9 +62,9 @@
 
         <div class="row">
 
-            <div class="entry table-responsive mx-auto d-block mb-0">
+            <div class="entry mx-auto d-block mb-0">
 
-                <table class="table table-striped table-hover">
+                <table class="table table-striped table-hover table-responsive">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">No</th>
