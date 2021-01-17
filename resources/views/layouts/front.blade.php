@@ -124,9 +124,9 @@
             <h3>DiBanyuwangi.CYou</h3>
             <p>DiBanyuwangi.Cyou merupakan Visitor's Guide Book Banyuwangi versi website yang memberikan informasi seputar wisata, hotel atau penginapan, cafe atau resto dan informasi tentang Banyuwangi lainnya.</p>
             <div class="social-links mt-3">
-              <a href="{{ $general->twitter }}" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="{{ $general->facebook }}" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="{{ $general->instagram }}" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="{{ $general->twitter }}" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
+              <a href="{{ $general->facebook }}" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+              <a href="{{ $general->instagram }}" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
             </div>
           </div>
 
