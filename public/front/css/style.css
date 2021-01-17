@@ -2633,3 +2633,10 @@ section {
   font-family: 'Poppins', sans-serif;;
   color: #fff;
 }
+
+.darkmode #footer .credits {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+}
