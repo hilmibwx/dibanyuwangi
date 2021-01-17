@@ -80,3 +80,7 @@
     </section>
 
     @endsection
+
+@push('scripts')
+{!! $general->disqus !!}
+@endpush
